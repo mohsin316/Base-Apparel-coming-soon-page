@@ -1,0 +1,231 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --desat-red:hsl(0, 36%, 70%);
+    --softRed:hsl(0, 93%, 68%);
+    --Dgrayish-Red:  hsl(0, 6%, 24%);
+
+
+    --ff: 'Josefin Sans', sans-serif;
+    --ffL: 300;
+    --ffM: 400;
+    --ffB: 600;
+
+}
+
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--ff);
+    background-image: url('images/bg-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+img{
+    display: block;
+    max-width: 100%;
+}
+
+.container{
+    min-height: 100vh;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+}
+
+.logo{
+    padding: 1.75rem 1.5rem;
+    align-self: flex-start;
+    width: 100%;
+}
+.logo img{
+    width: 80px;
+}
+
+.img-container img{
+    width: 100%;
+    height: auto;
+}
+
+.img-container{
+    width: 100%;  
+}
+
+.content-container{
+    padding: 2rem 1rem;
+    margin-bottom: 3rem;
+}
+
+h1{
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    display: block;
+    font-weight: var(--ffb);
+    color: var(--Dgrayish-Red);
+    letter-spacing: .5rem;
+}
+
+span{
+    font-size: 2.25rem;
+    color: var(--desat-red);
+    font-weight: var(--ffL);
+    display: block;
+}
+
+p{
+    padding: 1.5rem .5rem;
+    color: var(--desat-red);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: var(--ffL);
+}
+
+input[type='email']{
+    color: hsl(0, 6%, 24%);
+    width: 100%;
+    height: 3.5em;
+    border: 2px solid hsl(0, 25%, 85%);
+    border-radius: 2em;
+    padding: 0 7.5em 0 2em;
+    position: relative;
+    transition: border-color 0.25s ease;
+}
+form{
+    position: relative;
+}
+
+
+input[type='email']:focus{
+    outline: none;
+    border-color: hsl(0, 36%, 70%);
+    transition: border-color 0.25s ease;
+
+}
+
+button{
+    cursor: pointer;
+    color: #FFFFFF;
+    text-align: center;
+    background-image: linear-gradient(135deg, hsl(0, 80%, 90%), hsl(0, 80%, 80%), hsl(0, 80%, 70%));
+    background-size: 150%;
+    background-position-x: right;
+    width: 6em;
+    padding: 1em;
+    border-radius: 2em;
+    box-shadow: 0 8px 16px hsl(0, 36%, 85%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+   
+    border: none;
+}
+
+button:hover {
+    background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100, 98%));
+    background-position-x: left;
+    box-shadow: 0 12px 16px hsl(0, 36%, 80%);
+    transition-property: box-shadow, background-position;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+
+
+button img{
+    outline: none;
+}
+input::placeholder {
+    color: hsl(0, 36%, 85%);
+}
+
+.second-img{
+    display: none;
+}
+
+
+@media (min-width: 800px){
+    body{
+        justify-content: left;
+        align-items: center;
+    }
+
+    .container{
+        max-width: 100%;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr .75fr;
+        grid-template-rows: 100px 1fr;
+    }
+    .logo{
+        grid-column: 1/2;
+        grid-row: 1;
+        padding: 0;
+        padding-left: 10rem;
+        padding-block: 2rem ;
+        height: 100%;
+
+    }
+    .logo img{
+        width: 10rem;
+        height: 100%;
+    }
+    .img-container{
+        grid-column: 2/3;
+        grid-row: 1/3;
+        height: 100%;
+        background-image: url('images/hero-desktop.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+    }
+
+    .second-img{
+        display: none;
+        height: 100%;
+        width: auto;
+        
+    }
+    .content-container{
+        grid-column: 1/2;
+        grid-row: 2;
+        height: 100%;
+        padding-left: 10rem;
+        text-align: left;
+        padding-top: 5rem;
+        margin: 0;
+    }
+    span{
+        font-size: 3.5rem;
+    }
+    h1{
+        font-size: 4rem;
+    }
+    .content-container p{
+        padding-right: 12rem;
+        font-weight: var(--ffM);
+        margin-bottom: 1rem;
+    }       
+    form{
+        width: 70%;
+    }
+
+   
+    .first-img{
+        display: none;
+    }
+}
