@@ -1,5 +1,5 @@
 const form = document.querySelector('form')
-
+const msg = document.querySelector('.error-msg')
 
 
 
@@ -13,9 +13,11 @@ form.addEventListener('submit', e =>{
     if(!validateEmail(email)){
         form.classList.add('error')
         form.classList.remove('success')
+        msg.textContent = 'Please provide a valid email'
     }else{
         form.classList.remove('error')
         form.classList.add('success')
+        msg.textContent = 'Success! Valid email address'
     }
 })
 

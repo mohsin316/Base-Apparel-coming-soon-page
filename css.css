@@ -131,7 +131,7 @@ form{
     opacity: 0;
 }
 
-.error .error-msg{
+.error .error-msg ,.success .error-msg{
     display: block;
     opacity: .85;
 }
